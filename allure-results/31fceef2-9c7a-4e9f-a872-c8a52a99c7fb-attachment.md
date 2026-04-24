@@ -1,0 +1,269 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Tests\Login\ForgotPassword.spec.js >> Forgot Password Tests >> should reset password successfully
+- Location: Scripts\Tests\Login\ForgotPassword.spec.js:15:5
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('chandanad')
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText('chandanad')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - button "MD Manage" [ref=e8] [cursor=pointer]:
+      - img "MD Manage" [ref=e9]
+    - navigation [ref=e11]:
+      - link "Dashboard" [ref=e13]:
+        - /url: /
+        - img [ref=e14]
+        - generic [ref=e17]: Dashboard
+        - img [ref=e18]
+      - link "Users" [ref=e21]:
+        - /url: /users
+        - img [ref=e22]
+        - generic [ref=e34]: Users
+        - img [ref=e35]
+      - link "Practices" [ref=e38]:
+        - /url: /practice
+        - img [ref=e39]
+        - generic [ref=e43]: Practices
+        - img [ref=e44]
+      - link "Patients" [ref=e47]:
+        - /url: /patients-list
+        - img [ref=e48]
+        - generic [ref=e51]: Patients
+        - img [ref=e52]
+      - button "Files" [ref=e56] [cursor=pointer]:
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e60]: Files
+        - img [ref=e61]
+      - button "Fax" [ref=e65] [cursor=pointer]:
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - generic [ref=e71]: Fax
+        - img [ref=e72]
+      - link "Letters" [ref=e75]:
+        - /url: /letters
+        - img [ref=e76]
+        - generic [ref=e79]: Letters
+        - img [ref=e80]
+      - link "Reports" [ref=e83]:
+        - /url: /reports
+        - img [ref=e84]
+        - generic [ref=e87]: Reports
+        - img [ref=e88]
+      - button "Admin" [ref=e92] [cursor=pointer]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - generic [ref=e97]: Admin
+        - img [ref=e98]
+    - generic [ref=e100]:
+      - heading "Quick Access" [level=3] [ref=e102]
+      - generic [ref=e103]:
+        - link "DMS" [ref=e104]:
+          - /url: /dms
+          - img [ref=e105]
+          - generic [ref=e107]: DMS
+        - link "Patients" [ref=e108]:
+          - /url: /patients-list
+          - img [ref=e109]
+          - generic [ref=e114]: Patients
+  - generic [ref=e115]:
+    - generic [ref=e117]:
+      - heading "Dashboard" [level=1] [ref=e122]
+      - generic [ref=e123]:
+        - generic [ref=e127]:
+          - log [ref=e129]
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]: Select Practice
+              - combobox [ref=e134]
+            - img [ref=e137] [cursor=pointer]
+        - generic [ref=e141]:
+          - img [ref=e142]
+          - textbox "Please select a practice first..." [disabled] [ref=e146]
+        - button "CD Chandana Duddukuri SUPER ADMIN" [ref=e148] [cursor=pointer]:
+          - generic [ref=e150]: CD
+          - generic [ref=e151]:
+            - paragraph [ref=e152]: Chandana Duddukuri
+            - paragraph [ref=e153]: SUPER ADMIN
+          - img [ref=e155]
+    - main [ref=e158]:
+      - generic [ref=e161]:
+        - generic [ref=e166]:
+          - log [ref=e168]
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic ".DEMO" [ref=e172]
+              - combobox [ref=e175]
+            - img [ref=e178] [cursor=pointer]
+        - generic [ref=e180]:
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e184]:
+                - heading "Internal Status Ageing" [level=3] [ref=e185]
+                - paragraph [ref=e186]: "Showing data for: .DEMO"
+              - paragraph [ref=e189]: No data available
+            - generic [ref=e190]:
+              - generic [ref=e192]:
+                - heading "ARB & Patient Collection Ageing" [level=3] [ref=e193]
+                - paragraph [ref=e194]: "Showing data for: .DEMO"
+              - paragraph [ref=e197]: No data available
+            - generic [ref=e198]:
+              - generic [ref=e200]:
+                - heading "Patients Created" [level=3] [ref=e201]
+                - paragraph [ref=e202]: "Showing data for: .DEMO"
+              - application "Patients Created bar chart" [ref=e204]:
+                - generic [ref=e206]:
+                  - generic [ref=e208]:
+                    - generic [ref=e210]: Apr-26
+                    - generic [ref=e212]: Mar-26
+                    - generic [ref=e214]: Feb-26
+                    - generic [ref=e215]: (Month)
+                  - generic [ref=e216]:
+                    - generic [ref=e218]: "0"
+                    - generic [ref=e220]: "1"
+                    - generic [ref=e221]: No of Patients
+                  - 'generic "Patients Created - Apr-26: 1" [ref=e223]'
+                  - generic:
+                    - 'generic "Patients Created - Mar-26: 0"'
+                  - generic:
+                    - 'generic "Patients Created - Feb-26: 0"'
+                  - generic [ref=e225]: "1"
+                  - generic [ref=e227]: "0"
+                  - generic [ref=e229]: "0"
+          - generic [ref=e230]:
+            - generic [ref=e235]:
+              - log [ref=e237]
+              - generic [ref=e238]:
+                - generic [ref=e239]:
+                  - generic "Chandana Duddukuri" [ref=e241]
+                  - combobox [ref=e244]
+                - img [ref=e247] [cursor=pointer]
+            - generic [ref=e249]:
+              - generic [ref=e251]:
+                - heading "App Status Count" [level=3] [ref=e252]
+                - paragraph [ref=e253]: "Showing data for: Chandana Duddukuri"
+              - paragraph [ref=e258]: Loading data...
+            - generic [ref=e259]:
+              - generic [ref=e261]:
+                - heading "DMS Pages Uploaded" [level=3] [ref=e262]
+                - paragraph [ref=e263]: "Showing data for: Chandana Duddukuri"
+              - paragraph [ref=e268]: Loading data...
+            - generic [ref=e269]:
+              - generic [ref=e271]:
+                - heading "Patients Created" [level=3] [ref=e272]
+                - paragraph [ref=e273]: "Showing data for: Chandana Duddukuri"
+              - paragraph [ref=e278]: Loading data...
+          - generic [ref=e279]:
+            - generic [ref=e284]:
+              - log [ref=e286]
+              - generic [ref=e287]:
+                - generic [ref=e288]:
+                  - generic "--- (Lawyer) [-NA-]" [ref=e290]
+                  - combobox [ref=e293]
+                - img [ref=e296] [cursor=pointer]
+            - generic [ref=e298]:
+              - generic [ref=e300]:
+                - heading "Download Status" [level=3] [ref=e301]
+                - paragraph [ref=e302]: "Showing data for: --- (Lawyer) [-NA-]"
+              - paragraph [ref=e307]: Loading data...
+            - generic [ref=e308]:
+              - generic [ref=e310]:
+                - heading "Rejected & Need More Info" [level=3] [ref=e311]
+                - paragraph [ref=e312]: "Showing data for: --- (Lawyer) [-NA-]"
+              - paragraph [ref=e317]: Loading data...
+            - generic [ref=e318]:
+              - generic [ref=e320]:
+                - heading "Processed Ageing" [level=3] [ref=e321]
+                - paragraph [ref=e322]: "Showing data for: --- (Lawyer) [-NA-]"
+              - paragraph [ref=e327]: Loading data...
+          - generic [ref=e328]:
+            - generic [ref=e333]:
+              - log [ref=e335]
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - generic "Alex Wicker" [ref=e339]
+                  - combobox [ref=e342]
+                - img [ref=e345] [cursor=pointer]
+            - generic [ref=e347]:
+              - generic [ref=e349]:
+                - heading "Case Type Distribution" [level=3] [ref=e350]
+                - paragraph [ref=e351]: "Showing data for: Alex Wicker"
+              - paragraph [ref=e356]: Loading chart data...
+            - generic [ref=e357]:
+              - generic [ref=e359]:
+                - heading "Top 5 Insurances" [level=3] [ref=e360]
+                - paragraph [ref=e361]: "Showing data for: Alex Wicker"
+              - paragraph [ref=e366]: Loading chart data...
+            - generic [ref=e367]:
+              - generic [ref=e369]:
+                - heading "Document Aging by Status" [level=3] [ref=e370]
+                - paragraph [ref=e371]: "Showing data for: Alex Wicker"
+              - paragraph [ref=e373]: No data available
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '../../Fixtures/baseTest';
+  2  | 
+  3  | test.describe.parallel('Forgot Password Tests', () => {
+  4  | test('should navigate to forgot password page', async ({ LoginPage, testdata }) => {
+  5  |     await LoginPage.navigate(testdata.adminUrl);
+  6  |     await LoginPage.forgotPassword(testdata.forgotPassword.email);
+  7  |     await expect(LoginPage.page.getByText('Forgot password')).toBeVisible();
+  8  | });
+  9  | test('should navigate to reset password page', async ({ LoginPage, testdata }) => {
+  10 |     await LoginPage.navigate(testdata.adminUrl);
+  11 |     await LoginPage.forgotPassword(testdata.forgotPassword.email);
+  12 |     await LoginPage.resetPassword(testdata.resetPassword.newPassword, testdata.resetPassword.confirmPassword);
+  13 |     await expect(LoginPage.page.getByText('Reset Password')).toBeVisible();
+  14 | });
+  15 | test('should reset password successfully', async ({ LoginPage, testdata }) => {
+  16 |     await LoginPage.navigate(testdata.adminUrl);
+  17 |     await LoginPage.login(testdata.admin.username, testdata.resetPassword.newPassword);
+> 18 |     await expect(LoginPage.page.getByText(testdata.admin.username)).toBeVisible();
+     |                                                                     ^ Error: expect(locator).toBeVisible() failed
+  19 | });
+  20 | test('should show error message for required fields', async ({ LoginPage, testdata }) => {
+  21 |     await LoginPage.navigate(testdata.adminUrl);
+  22 |     await LoginPage.forgotPassword(testdata.forgotPassword.email);
+  23 |     await LoginPage.resetPassword('', '');
+  24 |     await expect(LoginPage.page.getByText('New password is required')).toBeVisible();
+  25 |     await expect(LoginPage.page.getByText('Confirm password is required')).toBeVisible();
+  26 | });
+  27 | test('should show error message for invalid email', async ({ LoginPage, testdata }) => {
+  28 |     await LoginPage.navigate(testdata.adminUrl);
+  29 |     await LoginPage.forgotPassword('invalidemail');
+  30 |     await expect(LoginPage.page.getByText('Invalid email address')).toBeVisible();
+  31 | });
+  32 | test('back button should navigate to login page', async ({ LoginPage, testdata }) => {
+  33 |     await LoginPage.navigate(testdata.adminUrl);
+  34 |     await LoginPage.forgotPassword(testdata.forgotPassword.email);
+  35 |     await LoginPage.backToLogin();
+  36 |     await expect(LoginPage.page.getByText('Sign in')).toBeVisible();
+  37 | });
+  38 | });
+```

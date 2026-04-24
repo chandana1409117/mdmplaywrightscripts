@@ -1,0 +1,19 @@
+{
+  "name": "arb-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2",
+    "allure-playwright": "^3.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "mailslurp-client": "^17.2.0"
+  }
+}
