@@ -1,6 +1,6 @@
 {
-    "adminUrl": "https://arbmdmmanage-ui.azurewebsites.net/login",
-    "lawyerUrl": "https://arbmdmmanage-ext-ui.azurewebsites.net/login",
+    "internalUrl": "https://arbmdmmanage-ui.azurewebsites.net/login",
+    "externalUrl": "https://arbmdmmanage-ext-ui.azurewebsites.net/login",
     "admin": {
         "username": "chandanad",
         "password": "Test@123",

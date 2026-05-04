@@ -3,7 +3,9 @@ import { LoginPage } from '../pages/LoginPage';
 import { UserPage } from '../pages/UserPage';
 import { loadTestData } from '../Utils/dataLoader';
 import { MailSlurp } from 'mailslurp-client';
-
+import { PracticePage } from '../pages/PracticePage';
+import { PatientPage } from '../pages/PatientPage';
+import { DMSPage } from '../pages/DMSPage';
 
 import dotenv from 'dotenv';
 
@@ -19,6 +21,21 @@ export const test = base.extend({
     // ✅ Users Page Fixture (NEW)
     usersPage: async ({ page }, use) => {
         await use(new UserPage(page));
+    },
+
+    // ✅ Practice Page Fixture
+    practicePage: async ({ page }, use) => {
+        await use(new PracticePage(page));
+    },
+
+    // ✅ Patient Page Fixture
+   patientsPage: async ({page}, use) => {
+    await use(new PatientPage(page));
+   },
+
+    // ✅ DMS Page Fixture
+    dmsPage: async ({page}, use) => {
+        await use(new DMSPage(page));
     },
 
     mailSlurp: async ({}, use) => {

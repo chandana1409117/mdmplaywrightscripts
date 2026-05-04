@@ -29,6 +29,13 @@ export class LoginPage {
         await this.page.click(this.loginButton);
     }
 
+    async loginExternal(username,password) {
+        await this.page.goto(this.externalUrl);
+        await this.page.fill(this.usernameInput, username);
+        await this.page.fill(this.passwordInput, password);
+        await this.page.click(this.loginButtonExternal);
+    }
+
     async verifyError(message) {
         await this.page.locator(this.errorMessage(message)).waitFor();
     }
