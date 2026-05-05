@@ -6,6 +6,7 @@ import { MailSlurp } from 'mailslurp-client';
 import { PracticePage } from '../pages/PracticePage';
 import { PatientPage } from '../pages/PatientPage';
 import { DMSPage } from '../pages/DMSPage';
+import { AssignDOSPage } from '../pages/AssignDOSPage';
 
 import dotenv from 'dotenv';
 
@@ -36,6 +37,10 @@ export const test = base.extend({
     // ✅ DMS Page Fixture
     dmsPage: async ({page}, use) => {
         await use(new DMSPage(page));
+    },
+    // ✅ Assign DOS Page Fixture
+    assignDOSPage: async ({page}, use) => {
+        await use(new AssignDOSPage(page));
     },
 
     mailSlurp: async ({}, use) => {
