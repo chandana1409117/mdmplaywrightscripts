@@ -1,5 +1,6 @@
 {
-    "internalUrl": "https://arbmdmmanage-ui.azurewebsites.net/login",
+
+    "adminUrl": "https://arbmdmmanage-ui.azurewebsites.net/login",
     "externalUrl": "https://arbmdmmanage-ext-ui.azurewebsites.net/login",
     "admin": {
         "username": "chandanad",
@@ -181,71 +182,71 @@
     },
     "dms": [
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2101",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "AOB",
             "fromDate": "02-15-2024",
             "toDate": "02-15-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2102",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "BILLS",
             "fromDate": "05-03-2024",
             "toDate": "05-03-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2103",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "HCFA",
             "fromDate": "11-30-2023",
             "toDate": "12-01-2023"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2104",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "AOB",
             "fromDate": "03-21-2024",
             "toDate": "03-21-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2105",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "BILLS",
             "fromDate": "08-10-2023",
             "toDate": "08-10-2023"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2106",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "AOB",
             "fromDate": "07-02-2024",
             "toDate": "07-02-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2107",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "ARB",
             "fromDate": "09-10-2024",
             "toDate": "09-18-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2108",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "BILLS",
             "fromDate": "04-12-2024",
             "toDate": "04-12-2024"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2109",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "AOB",
             "fromDate": "10-04-2023",
             "toDate": "10-05-2023"
         },
         {
-            "hospital": "IMAGE HOSPITALS",
-            "searchValue": "2110",
+            "hospital": "RAINBOW HOSPITALS",
+            "searchValue": "rb",
             "documentType": "Coversheet",
             "fromDate": "06-30-2024",
             "toDate": "06-30-2024"
@@ -254,8 +255,8 @@
     "patient": [
         {
             "id": "20001",
-            "practice": "IMAGE HOSPITALS",
-            "patientIdSuffix": "2101",
+            "practice": "RAINBOW HOSPITALS",
+            "patientIdSuffix": "1234",
             "firstName": "Liam",
             "lastName": "Anderson",
             "dob": "03/22/1986",
@@ -291,7 +292,7 @@
         },
         {
             "id": "20002",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2102",
             "firstName": "Sophia",
             "lastName": "Garcia",
@@ -328,7 +329,7 @@
         },
         {
             "id": "20003",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2103",
             "firstName": "Noah",
             "lastName": "Wilson",
@@ -365,7 +366,7 @@
         },
         {
             "id": "20004",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2104",
             "firstName": "Olivia",
             "lastName": "Martinez",
@@ -402,7 +403,7 @@
         },
         {
             "id": "20005",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2105",
             "firstName": "Ethan",
             "lastName": "Nguyen",
@@ -439,7 +440,7 @@
         },
         {
             "id": "20006",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2106",
             "firstName": "Ava",
             "lastName": "Khan",
@@ -476,7 +477,7 @@
         },
         {
             "id": "20007",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2107",
             "firstName": "Mason",
             "lastName": "O'Connor",
@@ -513,7 +514,7 @@
         },
         {
             "id": "20008",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2108",
             "firstName": "Isabella",
             "lastName": "Lopez",
@@ -550,7 +551,7 @@
         },
         {
             "id": "20009",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2109",
             "firstName": "Lucas",
             "lastName": "Brown",
@@ -587,7 +588,7 @@
         },
         {
             "id": "20010",
-            "practice": "IMAGE HOSPITALS",
+            "practice": "RAINBOW HOSPITALS",
             "patientIdSuffix": "2110",
             "firstName": "Mia",
             "lastName": "Singh",
@@ -676,7 +677,7 @@
         "comments": "Testing auto flow"
     },
     "reports": {
-        "hospital": "IMAGE HOSPITALS",
+        "hospital": "RAINBOW HOSPITALS",
         "recordType": "New Records",
         "aaaIndex": "Yes",
         "searchValue": "1605"

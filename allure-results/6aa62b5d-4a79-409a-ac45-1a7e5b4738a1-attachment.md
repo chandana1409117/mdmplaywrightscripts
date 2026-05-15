@@ -1,0 +1,366 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Tests\Patient\PatientCrud.spec.js >> Patient Management >> Create Patient
+- Location: Scripts\Tests\Patient\PatientCrud.spec.js:21:9
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('Patient saved successfully')
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for getByText('Patient saved successfully')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e5]:
+    - button "MD Manage" [ref=e8] [cursor=pointer]:
+      - img "MD Manage" [ref=e9]
+    - navigation [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - img [ref=e14]
+        - generic [ref=e17]: Dashboard
+        - img [ref=e18]
+      - link "Users" [ref=e21] [cursor=pointer]:
+        - /url: /users
+        - img [ref=e22]
+        - generic [ref=e34]: Users
+        - img [ref=e35]
+      - link "Practices" [ref=e38] [cursor=pointer]:
+        - /url: /practice
+        - img [ref=e39]
+        - generic [ref=e43]: Practices
+        - img [ref=e44]
+      - link "Patients" [ref=e47] [cursor=pointer]:
+        - /url: /patients-list
+        - img [ref=e48]
+        - generic [ref=e51]: Patients
+        - img [ref=e52]
+      - button "Files" [ref=e56] [cursor=pointer]:
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e60]: Files
+        - img [ref=e61]
+      - button "Fax" [ref=e65] [cursor=pointer]:
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - generic [ref=e71]: Fax
+        - img [ref=e72]
+      - link "Letters" [ref=e75] [cursor=pointer]:
+        - /url: /letters
+        - img [ref=e76]
+        - generic [ref=e79]: Letters
+        - img [ref=e80]
+      - link "Reports" [ref=e83] [cursor=pointer]:
+        - /url: /reports
+        - img [ref=e84]
+        - generic [ref=e87]: Reports
+        - img [ref=e88]
+      - button "Admin" [ref=e92] [cursor=pointer]:
+        - generic [ref=e93]:
+          - img [ref=e94]
+          - generic [ref=e97]: Admin
+        - img [ref=e98]
+    - generic [ref=e100]:
+      - heading "Quick Access" [level=3] [ref=e102]
+      - generic [ref=e103]:
+        - link "DMS" [ref=e104] [cursor=pointer]:
+          - /url: /dms
+          - img [ref=e105]
+          - generic [ref=e107]: DMS
+        - link "Patients" [ref=e108] [cursor=pointer]:
+          - /url: /patients-list
+          - img [ref=e109]
+          - generic [ref=e114]: Patients
+  - generic [ref=e115]:
+    - generic [ref=e117]:
+      - generic [ref=e120]:
+        - button [ref=e121] [cursor=pointer]:
+          - img [ref=e122]
+        - heading "Add New Patient" [level=1] [ref=e125]
+      - generic [ref=e126]:
+        - generic [ref=e130]:
+          - log [ref=e132]
+          - generic [ref=e133]:
+            - generic [ref=e134]:
+              - generic [ref=e135]: Select Practice
+              - combobox [ref=e137]
+            - img [ref=e140] [cursor=pointer]
+        - generic [ref=e144]:
+          - img [ref=e145]
+          - textbox "Please select a practice first..." [disabled] [ref=e149]
+        - button "CD Chandana Duddukuri SUPER ADMIN" [ref=e151] [cursor=pointer]:
+          - generic [ref=e153]: CD
+          - generic [ref=e154]:
+            - paragraph [ref=e155]: Chandana Duddukuri
+            - paragraph [ref=e156]: SUPER ADMIN
+          - img [ref=e158]
+    - main [ref=e161]:
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - img [ref=e172]
+                - heading "Patient Details" [level=3] [ref=e175]
+              - generic [ref=e176]:
+                - generic [ref=e177]:
+                  - generic [ref=e178]: Practice *
+                  - generic [ref=e182]:
+                    - log [ref=e184]
+                    - generic [ref=e185]:
+                      - generic [ref=e186]:
+                        - generic [ref=e187]: RAINBOW HOSPITALS
+                        - combobox [ref=e189]
+                      - img [ref=e192] [cursor=pointer]
+                - generic [ref=e194]:
+                  - generic [ref=e195]: Patient ID *
+                  - generic [ref=e196]:
+                    - generic [ref=e197]: RB
+                    - textbox [ref=e198]: "1234"
+                - generic [ref=e199]:
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: First Name *
+                    - textbox [ref=e202]: Liam
+                  - generic [ref=e203]:
+                    - generic [ref=e204]: Last Name *
+                    - textbox [ref=e205]: Anderson
+                  - generic [ref=e206]:
+                    - generic [ref=e207]: Initial
+                    - textbox [ref=e208]
+                - generic [ref=e209]:
+                  - generic [ref=e210]:
+                    - generic [ref=e211]: DOB *
+                    - generic [ref=e212]:
+                      - textbox "MM/DD/YYYY" [ref=e213]: 03/22/1986
+                      - textbox: 1986-03-22
+                      - button [ref=e214] [cursor=pointer]:
+                        - img [ref=e215]
+                  - generic [ref=e217]:
+                    - generic [ref=e218]: First Visit
+                    - generic [ref=e219]:
+                      - textbox "MM/DD/YYYY" [ref=e220]
+                      - textbox
+                      - button [ref=e221] [cursor=pointer]:
+                        - img [ref=e222]
+                - generic [ref=e224]:
+                  - generic [ref=e225]:
+                    - generic [ref=e226]: Gender
+                    - generic [ref=e227]:
+                      - generic [ref=e228]:
+                        - radio "Male" [checked] [ref=e229]
+                        - generic [ref=e230]: Male
+                      - generic [ref=e231]:
+                        - radio "Female" [ref=e232]
+                        - generic [ref=e233]: Female
+                      - generic [ref=e234]:
+                        - radio "Other" [ref=e235]
+                        - generic [ref=e236]: Other
+                  - generic [ref=e237]:
+                    - generic [ref=e238]: SSN
+                    - textbox [ref=e239]: 478-21-9023
+            - generic [ref=e240]:
+              - generic [ref=e241]:
+                - img [ref=e243]
+                - heading "Contact Information" [level=3] [ref=e247]
+              - generic [ref=e248]:
+                - generic [ref=e249]:
+                  - generic [ref=e250]: Address
+                  - textbox [ref=e251]: 421 Oak Avenue
+                - generic [ref=e252]:
+                  - generic [ref=e253]:
+                    - generic [ref=e254]: City
+                    - textbox [ref=e255]: Philadelphia
+                  - generic [ref=e256]:
+                    - generic [ref=e257]: State
+                    - textbox [ref=e258]: PA
+                - generic [ref=e259]:
+                  - generic [ref=e260]:
+                    - generic [ref=e261]: ZIP Code
+                    - textbox [ref=e262]: "19103"
+                  - generic [ref=e263]:
+                    - generic [ref=e264]: Phone
+                    - textbox [ref=e265]: "2155550147"
+          - generic [ref=e267]:
+            - generic [ref=e268]:
+              - img [ref=e270]
+              - heading "Primary Insurance" [level=3] [ref=e272]
+            - generic [ref=e273]:
+              - generic [ref=e274]:
+                - generic [ref=e275]: Insurance Company *
+                - generic [ref=e279]:
+                  - log [ref=e281]
+                  - generic [ref=e282]:
+                    - generic [ref=e283]:
+                      - generic [ref=e284]: AAA INSURANCE - NYP
+                      - combobox [ref=e286]
+                    - img [ref=e289] [cursor=pointer]
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic [ref=e293]: "Claim # *"
+                  - textbox [ref=e294]: UHC-20240215-8741
+                - generic [ref=e295]:
+                  - generic [ref=e296]: "Policy #"
+                  - textbox [ref=e297]: UHC-PL-99871234
+              - generic [ref=e298]:
+                - generic [ref=e299]: Date of Accident *
+                - generic [ref=e300]:
+                  - textbox "MM/DD/YYYY" [ref=e301]: 02/15/2024
+                  - textbox: 2024-02-15
+                  - button [ref=e302] [cursor=pointer]:
+                    - img [ref=e303]
+              - generic [ref=e305]:
+                - generic [ref=e306]: Relationship *
+                - textbox [ref=e307]: SELF
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - generic [ref=e310]: Adjuster
+                  - textbox [ref=e311]
+                - generic [ref=e312]:
+                  - generic [ref=e313]: Adjuster Fax
+                  - textbox [ref=e314]
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - generic [ref=e317]: Insurance Phone
+                  - textbox [ref=e318]
+                - generic [ref=e319]:
+                  - generic [ref=e320]: Insurance Fax
+                  - textbox [ref=e321]
+              - generic [ref=e322]:
+                - generic [ref=e323]: Notes
+                - textbox [ref=e324]
+          - generic [ref=e325]:
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - img [ref=e329]
+                - heading "Policy Holder" [level=3] [ref=e332]
+              - generic [ref=e333]:
+                - generic [ref=e334]:
+                  - generic [ref=e335]:
+                    - generic [ref=e336]: First Name
+                    - textbox [ref=e337]
+                  - generic [ref=e338]:
+                    - generic [ref=e339]: Last Name
+                    - textbox [ref=e340]
+                  - generic [ref=e341]:
+                    - generic [ref=e342]: Middle Name
+                    - textbox [ref=e343]
+                - generic [ref=e345]:
+                  - generic [ref=e346]: Address
+                  - textbox [ref=e347]
+                - generic [ref=e348]:
+                  - generic [ref=e349]:
+                    - generic [ref=e350]: City
+                    - textbox [ref=e351]
+                  - generic [ref=e352]:
+                    - generic [ref=e353]: State
+                    - textbox [ref=e354]
+                - generic [ref=e355]:
+                  - generic [ref=e356]:
+                    - generic [ref=e357]: ZIP
+                    - textbox [ref=e358]
+                  - generic [ref=e359]:
+                    - generic [ref=e360]: Phone
+                    - textbox [ref=e361]
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - img [ref=e365]
+                - heading "Secondary Insurance" [level=3] [ref=e367]
+                - generic [ref=e368]: (Optional)
+              - generic [ref=e369]:
+                - generic [ref=e370]:
+                  - generic [ref=e371]: Insurance Company
+                  - generic [ref=e375]:
+                    - log [ref=e377]
+                    - generic [ref=e378]:
+                      - generic [ref=e379]:
+                        - generic [ref=e380]: Select...
+                        - combobox [ref=e382]
+                      - img [ref=e385] [cursor=pointer]
+                - generic [ref=e387]:
+                  - generic [ref=e388]:
+                    - generic [ref=e389]: "Claim #"
+                    - textbox [ref=e390]
+                  - generic [ref=e391]:
+                    - generic [ref=e392]: "Policy #"
+                    - textbox [ref=e393]
+                - generic [ref=e394]:
+                  - generic [ref=e395]: Relationship
+                  - textbox [ref=e396]: SELF
+                - generic [ref=e397]:
+                  - generic [ref=e398]:
+                    - generic [ref=e399]: Insurance Phone
+                    - textbox [ref=e400]
+                  - generic [ref=e401]:
+                    - generic [ref=e402]: Insurance Fax
+                    - textbox [ref=e403]
+                - generic [ref=e404]:
+                  - generic [ref=e405]: Notes
+                  - textbox [ref=e406]
+        - generic [ref=e408]:
+          - button "Cancel" [ref=e409] [cursor=pointer]
+          - button "Save" [active] [ref=e410] [cursor=pointer]:
+            - img [ref=e411]
+            - text: Save
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '../../Fixtures/baseTest';
+  2  | 
+  3  | test.describe('Patient Management', () => {
+  4  |     test.describe.configure({ mode: 'serial' });
+  5  | 
+  6  |     test.beforeEach(async ({ loginPage, testData }) => {
+  7  |         await loginPage.navigate(testData.adminUrl);
+  8  |         await loginPage.login(testData.admin.username, testData.admin.password);
+  9  |     });
+  10 | 
+  11 |     test('Create Patient', async ({ patientPage, testData }) => {
+  12 |         const patient = testData.patient[0];
+  13 |         await patientPage.navigateToPatients();
+  14 |         await patientPage.createPatient(patient);
+  15 | 
+  16 |         await expect(patientPage.page.getByText('Patient saved successfully')).toBeVisible();
+  17 |     });
+  18 | 
+  19 |     test('Edit Patient', async ({ patientPage, testData }) => {
+  20 |         const base = testData.patient[0];
+  21 |         await patientPage.navigateToPatients();
+  22 |         await patientPage.editPatient({
+  23 |             ...base,
+  24 |             firstName: 'LiamUpdated',
+  25 |         });
+  26 | 
+  27 |         await expect(patientPage.page.getByText('Patient updated successfully')).toBeVisible();
+  28 |     });
+  29 | 
+  30 |     test('View Patient', async ({ patientPage, testData }) => {
+> 31 |         await patientPage.navigateToPatients();
+     |                                                                                ^ Error: expect(locator).toBeVisible() failed
+  32 |         await patientPage.viewPatient({
+  33 |             ...testData.patient[0],
+  34 |             firstName: 'LiamUpdated',
+  35 |         });
+  36 |     });
+  37 | });
+  38 | 
+```

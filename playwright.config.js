@@ -9,7 +9,7 @@ export default defineConfig({
 
   forbidOnly: !!process.env.CI,
 
-  retries: 1, // small retry
+  // small retry
 
   workers: 1, // 🔥 VERY IMPORTANT
 

@@ -1,10 +1,19 @@
 import { expect } from '@playwright/test';
 
+/** Match react-select option text (spacing + case may differ from JSON). */
+function optionNamePattern(label) {
+    const parts = String(label)
+        .trim()
+        .split(/\s+/)
+        .map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    return new RegExp(`^${parts.join('\\s+')}$`, 'i');
+}
+
 export class PatientPage {
     constructor(page) {
         this.page = page;
 
-        this.patientsMenu = page.getByRole('link', { name: 'Patients' });
+        this.patientsMenu = page.getByRole('navigation').getByRole('link', { name: 'Patients' }).first();
         this.createBtn = page.getByRole('button', { name: 'Create' });
         this.saveBtn = page.getByRole('button', { name: 'Save' });
 
@@ -29,9 +38,17 @@ export class PatientPage {
     }
 
     async selectDropdownByIndex(index, value) {
-        const dropdown = this.page.locator('.select__control').nth(index);
+        if (value == null || String(value).trim() === '') {
+            throw new Error(`selectDropdownByIndex(${index}): option label is required (got ${JSON.stringify(value)})`);
+        }
+        const dropdown = this.page.locator('.select__control').nth(index + 1);
         await dropdown.click();
-        await this.page.getByRole('option', { name: value }).click();
+        await this.page
+            .getByRole('listbox')
+            .last()
+            .getByRole('option', { name: optionNamePattern(value) })
+            .first()
+            .click();
     }
 
     async createPatient(data) {
@@ -45,7 +62,8 @@ export class PatientPage {
         await this.firstName.fill(data.firstName);
         await this.lastName.fill(data.lastName);
         await this.dob.fill(data.dob);
-        await this.page.getByRole('radio', { name: data.gender }).check();
+        const sexValue = data.gender === 'Female' ? 'F' : 'M';
+        await this.page.locator(`input[name="sex"][value="${sexValue}"]`).first().check();
 
         await this.ssn.fill(data.ssn);
         await this.address.fill(data.address);

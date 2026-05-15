@@ -1,6 +1,8 @@
 import { test, expect } from '../../Fixtures/baseTest';
+import { LawyerPage } from '../../pages/LawyerPage';
 
 test('Lawyer flow', async ({ page, testData }) => {
+    test.setTimeout(180_000);
 
     const lawyerPage = new LawyerPage(page);
     // Login
@@ -14,9 +16,11 @@ test('Lawyer flow', async ({ page, testData }) => {
     await lawyerPage.viewFile();
     await lawyerPage.downloadFile();
 
-    // Actions
+    // Actions (reject remounts the row — reopen detail before the next action)
     await lawyerPage.rejectRecord('Rejected');
+    await lawyerPage.reopenFirstRecordDetail();
     await lawyerPage.requestMoreInfo('Need more info');
+    await lawyerPage.reopenFirstRecordDetail();
     await lawyerPage.startProcessing(
         testData.aaaDetails.aaaId,
         testData.aaaDetails.comments

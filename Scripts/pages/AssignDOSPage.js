@@ -35,6 +35,7 @@ export class AssignDOSPage {
    
     // 🔹 Select patient
     async selectPatient(claimNumber) {
+      
       await this.selectPatient.click();
     }
    

@@ -1,21 +1,43 @@
 import { test } from '../../Fixtures/baseTest';
 
+function getRandomPatient(patients) {
+    return patients[Math.floor(Math.random() * patients.length)];
+}
 
-test('Assign DOS flow', async ({ assignDOSPage }) => {
+test('Assign DOS flow', async ({ assignDOSPage, testData }) => {
 
-  const patient = getRandompatient();   // your existing function
-  const hospital = randomdms.hospital;  // your existing data
+    const createdPatient = getRandomPatient(testData.patient);
 
-  await assignDOSPage.navigateToPatients();
-  await assignDOSPage.selectPractice(hospital);
-  await assignDOSPage.searchPatient(patient.fullName);
-  await assignDOSPage.selectPatient(patient.primaryInsurance.claimNumber);
-  await assignDOSPage.clickAssign();
-  await assignDOSPage.selectStatus(assignDOS.status);
-  await assignDOSPage.selectDropdown('Firm Attorney', assignDOS.attorney);
-  await assignDOSPage.selectDropdown('Case Type', assignDOS.caseType);
-  await assignDOSPage.fillForm(assignDOS);
-  await assignDOSPage.selectDecision(assignDOS.decision);
-  await assignDOSPage.submit();
+    const hospital = createdPatient.practice;
+
+    await assignDOSPage.navigateToPatients();
+
+    await assignDOSPage.selectPractice(hospital);
+
+    await assignDOSPage.searchPatient(createdPatient.fullName);
+
+    await assignDOSPage.selectPatient(
+        createdPatient.primaryInsurance.claimNumber
+    );
+
+    await assignDOSPage.clickAssign();
+
+    await assignDOSPage.selectStatus(testData.assignDOS.status);
+
+    await assignDOSPage.selectDropdown(
+        'Firm Attorney',
+        testData.assignDOS.attorney
+    );
+
+    await assignDOSPage.selectDropdown(
+        'Case Type',
+        testData.assignDOS.caseType
+    );
+
+    await assignDOSPage.fillForm(testData.assignDOS);
+
+    await assignDOSPage.selectDecision(testData.assignDOS.decision);
+
+    await assignDOSPage.submit();
 
 });

@@ -2,7 +2,7 @@ import { test, expect } from '../../Fixtures/baseTest';
 
 test.describe.parallel('Authentication Tests', () => {
     test('should login successfully', async ({LoginPage, testdata}) => {
-        await LoginPage.navigate(testdata.internalUrl);
+        await LoginPage.navigate(testdata.adminUrl);
         await LoginPage.login(testdata.admin.username, testdata.admin.password);
         await expect(LoginPage.page).toHaveURL(testdata.admin.dashboardUrl);
     });

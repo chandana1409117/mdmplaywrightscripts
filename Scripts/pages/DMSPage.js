@@ -6,10 +6,12 @@ export class DMSPage {
 
         // Navigation
         this.filesBtn = page.getByRole('button', { name: 'Files' });
-        this.dmsMenu = page.getByRole('link', { name: 'DMS', exact: true });
+        this.dmsMenu = page.getByRole('navigation').getByRole('link', { name: 'DMS', exact: true }).first();
 
         // Dropdowns
-        this.practiceDropdown = page.locator('.select__control').first();
+        this.practiceDropdown = page.locator('.select__control').nth(1
+
+        );
         this.documentTypeDropdown = page.locator('div').filter({ hasText: /^Select document type/ }).first();
 
         // Inputs
@@ -34,7 +36,7 @@ export class DMSPage {
 
     async selectPractice(practiceName) {
         await this.practiceDropdown.click();
-        await this.page.getByRole('option', { name: practiceName, exact: true }).click();
+        await this.page.getByRole('option', { name: practiceName, exact: true }).first().click();
     }
 
     async searchRecord(value) {

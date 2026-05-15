@@ -7,7 +7,7 @@ import { PracticePage } from '../pages/PracticePage';
 import { PatientPage } from '../pages/PatientPage';
 import { DMSPage } from '../pages/DMSPage';
 import { AssignDOSPage } from '../pages/AssignDOSPage';
-
+import { LawyerPage } from '../pages/LawyerPage';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -30,9 +30,9 @@ export const test = base.extend({
     },
 
     // ✅ Patient Page Fixture
-   patientsPage: async ({page}, use) => {
-    await use(new PatientPage(page));
-   },
+    patientPage: async ({ page }, use) => {
+        await use(new PatientPage(page));
+    },
 
     // ✅ DMS Page Fixture
     dmsPage: async ({page}, use) => {
@@ -41,6 +41,10 @@ export const test = base.extend({
     // ✅ Assign DOS Page Fixture
     assignDOSPage: async ({page}, use) => {
         await use(new AssignDOSPage(page));
+    },
+    // ✅ Lawyer Page Fixture
+    lawyerPage: async ({page}, use) => {
+        await use(new LawyerPage(page));
     },
 
     mailSlurp: async ({}, use) => {

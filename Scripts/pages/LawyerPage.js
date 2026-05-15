@@ -24,7 +24,6 @@ export class LawyerPage {
 
         // ⚙ Actions
         this.rejectBtn = page.locator('//button[@title="Reject Record"]');
-        this.requestInfoBtn = page.locator('//button[@title="Request More Information"]');
         this.startProcessingBtn = page.locator('//button[@title="Start Processing Record"]');
 
         // 📝 Inputs
@@ -33,9 +32,9 @@ export class LawyerPage {
 
     // 🔐 LOGIN
     async login(url, user) {
-        await this.page.goto(externalUrl);
-        await this.username.fill(user.lawyer.username);
-        await this.password.fill(user.lawyer.password);
+        await this.page.goto(url);
+        await this.username.fill(user.username);
+        await this.password.fill(user.password);
         await this.signInBtn.click();
     }
 
@@ -52,7 +51,7 @@ export class LawyerPage {
         const dosText = await this.dosCells.first().innerText();
         await this.dosCells.first().click();
 
-        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('domcontentloaded');
         return dosText;
     }
 
@@ -63,7 +62,12 @@ export class LawyerPage {
             this.viewFileBtn.first().click()
         ]);
 
-        await filePage.waitForLoadState();
+        // Popup may be PDF/image; DOM load events are unreliable
+        try {
+            await filePage.waitForLoadState('load', { timeout: 15_000 });
+        } catch {
+            await new Promise((r) => setTimeout(r, 1500));
+        }
         await filePage.close();
     }
 
@@ -80,7 +84,7 @@ export class LawyerPage {
     async rejectRecord(comment) {
         await this.rejectBtn.first().click();
         await this.commentBox.fill(comment);
-        await this.page.getByRole('button', { name: 'Reject' }).click();
+        await this.page.getByRole('button', { name: 'Reject', exact: true }).click();
     }
 
     // ℹ REQUEST INFO

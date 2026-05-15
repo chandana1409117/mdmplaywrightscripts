@@ -1,0 +1,102 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Tests\Login\ForgotPassword.spec.js >> Forgot Password Tests >> UI Validations >> should navigate to forgot password page
+- Location: Scripts\Tests\Login\ForgotPassword.spec.js:9:13
+
+# Error details
+
+```
+Error: page.goto: url: expected string, got undefined
+```
+
+# Test source
+
+```ts
+  1  | import { expect } from '@playwright/test';
+  2  | 
+  3  | export class LoginPage {
+  4  |     constructor(page) {
+  5  |         this.page = page;
+  6  |         this.usernameInput = 'input[name="username"]';
+  7  |         this.passwordInput = 'input[name="password"]';
+  8  |         this.loginButton = '//button[@type="submit"]';
+  9  |         this.errorMessage = (text) => `text=${text}`;
+  10 |         this.forgotPasswordButton = '//button[normalize-space()="Forgot Password?"]';
+  11 |         this.resetPasswordLink = '//span[normalize-space()="Send Reset Link"]';
+  12 |         this.emailInput = '//input[@placeholder="Enter your email address"]';
+  13 |         this.resetPasswordButton = '//a[normalize-space()="Reset My Password"]';
+  14 |         this.newPasswordInput = '//input[@id="password"]';
+  15 |         this.confirmPasswordInput = '//input[@id="confirmPassword"]';
+  16 |         this.resetPassword = '//button[normalize-space()="Reset Password"]';
+  17 |         this.errorMessage = (text) => `text=${text}`;
+  18 |         this.successMessage = (text) => `text=${text}`;
+  19 |         this.backToLoginButton = '//span[normalize-space()="Back to Login"]';
+  20 |     }
+  21 | 
+  22 |     async navigate(url) {
+  23 |         await this.page.goto(url);
+  24 |     }
+  25 | 
+  26 |     async login(username, password) {
+> 27 |         await this.page.fill(this.usernameInput, username);
+     |                     ^ Error: page.goto: url: expected string, got undefined
+  28 |         await this.page.fill(this.passwordInput, password);
+  29 |         await this.page.click(this.loginButton);
+  30 |     }
+  31 | 
+  32 |     async loginExternal(username,password) {
+  33 |         await this.page.goto(this.externalUrl);
+  34 |         await this.page.fill(this.usernameInput, username);
+  35 |         await this.page.fill(this.passwordInput, password);
+  36 |         await this.page.click(this.loginButtonExternal);
+  37 |     }
+  38 | 
+  39 |     async verifyError(message) {
+  40 |         await this.page.locator(this.errorMessage(message)).waitFor();
+  41 |     }
+  42 | 
+  43 |     async logout(username) {
+  44 |         await this.page.getByText(username).click();
+  45 |         await this.page.getByRole('button', { name: 'Sign out' }).click();
+  46 |         console.log('Logged out successfully');
+  47 |     }
+  48 |     async forgotPassword(email) {
+  49 |         await this.page.click(this.forgotPasswordButton);
+  50 |         await expect(this.page.getByText('Forgot password')).toBeVisible();
+  51 |         await this.page.fill(this.emailInput, email);
+  52 |         await this.page.click(this.resetPasswordLink);
+  53 |         await expect(this.page.getByText('Reset Password')).toBeVisible();
+  54 |     }
+  55 |     async getResetPasswordLink(email) {
+  56 |         const mailslurp = createMailClient();
+  57 | 
+  58 |         // 1️⃣ Create inbox FIRST
+  59 |         const inbox = await createInbox(mailslurp);
+  60 | 
+  61 |         // 2️⃣ Use this email in UI
+  62 |         await loginPage.submitEmail(inbox.emailAddress);
+  63 | 
+  64 |         // 3️⃣ Get reset link
+  65 |         const resetLink = await getResetPasswordLink(inbox.id);
+  66 | 
+  67 |         await page.goto(resetLink);
+  68 |     }
+  69 |     async resetPassword(newPassword, confirmPassword = newPassword) {
+  70 |         await this.page.click(this.resetPasswordButton);
+  71 |         await this.page.fill(this.newPasswordInput, newPassword);
+  72 |         await this.page.fill(this.confirmPasswordInput, confirmPassword);
+  73 |         await this.page.click(this.resetPassword);
+  74 |         await expect(this.page.getByText('Password reset successfully')).toBeVisible();
+  75 |     }
+  76 |     async backToLogin() {
+  77 |         await this.page.click(this.backToLoginButton);
+  78 |         await expect(this.page.getByText('Sign in')).toBeVisible();
+  79 |     }
+  80 | }
+```
